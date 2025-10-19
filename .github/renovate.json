@@ -6,5 +6,5 @@
     "helpers:pinGitHubActionDigests"
   ],
   "rangeStrategy": "bump",
-  "schedule": ["before 6am on monday"]
+  "schedule": ["before 6am on the first day of the month in America/New_York"]
 }
