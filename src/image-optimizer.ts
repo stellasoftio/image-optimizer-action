@@ -1,4 +1,5 @@
 import {
+  AVIF_QUALITY,
   COMPRESS_AVIF,
   COMPRESS_GIF,
   COMPRESS_JPG,
@@ -7,7 +8,9 @@ import {
   COMPRESS_WEBP,
   EXPORT_AVIF,
   EXPORT_WEBP,
+  JPEG_QUALITY,
   REPLACE_ORIGINAL_AFTER_EXPORT_WEBP,
+  WEBP_QUALITY,
 } from './constants';
 import { log } from './utils/logger-utils';
 import sharp from 'sharp';
@@ -48,30 +51,58 @@ const EXTENSION_TO_CONFIG_MAP: {
   gif: {
     flag: COMPRESS_GIF,
     readOptions: { animated: true },
-    exportOptions: { webp: { nearLossless: true } },
+    exportOptions: { webp: { nearLossless: true, quality: WEBP_QUALITY } },
     sharpFormat: 'gif',
     exportToWebp: EXPORT_WEBP,
   },
   png: {
     flag: COMPRESS_PNG,
     sharpFormat: 'png',
+    exportOptions: {
+      webp: { quality: WEBP_QUALITY },
+      avif: { quality: AVIF_QUALITY },
+    },
     exportToWebp: EXPORT_WEBP,
     exportToAvif: EXPORT_AVIF,
   },
   jpg: {
     flag: COMPRESS_JPG,
     sharpFormat: 'jpeg',
+    exportOptions: {
+      jpeg: { quality: JPEG_QUALITY },
+      webp: { quality: WEBP_QUALITY },
+      avif: { quality: AVIF_QUALITY },
+    },
     exportToWebp: EXPORT_WEBP,
     exportToAvif: EXPORT_AVIF,
   },
   jpeg: {
     flag: COMPRESS_JPG,
     sharpFormat: 'jpeg',
+    exportOptions: {
+      jpeg: { quality: JPEG_QUALITY },
+      webp: { quality: WEBP_QUALITY },
+      avif: { quality: AVIF_QUALITY },
+    },
     exportToWebp: EXPORT_WEBP,
     exportToAvif: EXPORT_AVIF,
   },
-  webp: { flag: COMPRESS_WEBP, sharpFormat: 'webp', exportToAvif: EXPORT_AVIF },
-  avif: { flag: COMPRESS_AVIF, sharpFormat: 'avif' },
+  webp: {
+    flag: COMPRESS_WEBP,
+    sharpFormat: 'webp',
+    exportOptions: {
+      webp: { quality: WEBP_QUALITY },
+      avif: { quality: AVIF_QUALITY },
+    },
+    exportToAvif: EXPORT_AVIF,
+  },
+  avif: {
+    flag: COMPRESS_AVIF,
+    sharpFormat: 'avif',
+    exportOptions: {
+      avif: { quality: AVIF_QUALITY },
+    },
+  },
 };
 
 export async function processImages({

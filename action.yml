@@ -30,6 +30,15 @@ inputs:
   compress-avif:
     description: 'Compress AVIF files'
     required: false
+  jpeg-quality:
+    description: 'Quality for JPEG compression (1-100)'
+    required: false
+  webp-quality:
+    description: 'Quality for WebP compression (1-100)'
+    required: false
+  avif-quality:
+    description: 'Quality for AVIF compression (1-100)'
+    required: false
   export-webp:
     description: 'Export WebP files'
     required: false

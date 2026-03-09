@@ -163,19 +163,22 @@ with:
     src/assets/images/another-dir/**
 ```
 
-| Input                              | Description                                       | Type              | Default           |
-| ---------------------------------- | ------------------------------------------------- | ----------------- | ----------------- |
-| github-token                       | The generated GitHub token                        | string (required) | ''                |
-| debug                              | Enables verbose logging for easier debugging      | boolean           | false             |
-| compress-png                       | Enables compressing PNGs                          | boolean           | true              |
-| compress-svg                       | Enables compressing SVGs                          | boolean           | true              |
-| compress-jpg                       | Enables compressing JPG / JPEGs                   | boolean           | true              |
-| compress-webp                      | Enables compressing WEBPs                         | boolean           | true              |
-| compress-avif                      | Enables compressing AVIFs                         | boolean           | true              |
-| export-webp                        | Converts PNG, JPG / JPEG into WEBP                | boolean           | false             |
-| export-avif                        | Converts PNG, JPG / JPEG, WEBP into AVIF          | boolean           | false             |
-| replace-original-after-export-webp | Replace original files after exporting WebP files | boolean           | false             |
-| ignore-paths                       | Paths of globs to prevent from processing         | string[]          | node_modules/\*\* |
+| Input                              | Description                                       | Type              | Default            |
+| ---------------------------------- | ------------------------------------------------- | ----------------- | ------------------ |
+| github-token                       | The generated GitHub token                        | string (required) | ''                 |
+| debug                              | Enables verbose logging for easier debugging      | boolean           | false              |
+| compress-png                       | Enables compressing PNGs                          | boolean           | true               |
+| compress-svg                       | Enables compressing SVGs                          | boolean           | true               |
+| compress-jpg                       | Enables compressing JPG / JPEGs                   | boolean           | true               |
+| compress-webp                      | Enables compressing WEBPs                         | boolean           | true               |
+| compress-avif                      | Enables compressing AVIFs                         | boolean           | true               |
+| jpeg-quality                       | Quality for JPEG compression (1-100)              | number            | 80 (sharp default) |
+| webp-quality                       | Quality for WebP compression (1-100)              | number            | 80 (sharp default) |
+| avif-quality                       | Quality for AVIF compression (1-100)              | number            | 50 (sharp default) |
+| export-webp                        | Converts PNG, JPG / JPEG into WEBP                | boolean           | false              |
+| export-avif                        | Converts PNG, JPG / JPEG, WEBP into AVIF          | boolean           | false              |
+| replace-original-after-export-webp | Replace original files after exporting WebP files | boolean           | false              |
+| ignore-paths                       | Paths of globs to prevent from processing         | string[]          | node_modules/\*\*  |
 
 ## 🔒 Permissions
 
