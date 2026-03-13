@@ -18,6 +18,15 @@ export const COMPRESS_WEBP = process.env['INPUT_COMPRESS-WEBP']
 export const COMPRESS_AVIF = process.env['INPUT_COMPRESS-AVIF']
   ? process.env['INPUT_COMPRESS-AVIF'] === 'true'
   : true;
+export const JPEG_QUALITY = process.env['INPUT_JPEG-QUALITY']
+  ? parseInt(process.env['INPUT_JPEG-QUALITY']!, 10)
+  : undefined;
+export const WEBP_QUALITY = process.env['INPUT_WEBP-QUALITY']
+  ? parseInt(process.env['INPUT_WEBP-QUALITY']!, 10)
+  : undefined;
+export const AVIF_QUALITY = process.env['INPUT_AVIF-QUALITY']
+  ? parseInt(process.env['INPUT_AVIF-QUALITY']!, 10)
+  : undefined;
 export const EXPORT_WEBP = process.env['INPUT_EXPORT-WEBP'] === 'true';
 export const EXPORT_AVIF = process.env['INPUT_EXPORT-AVIF'] === 'true';
 export const REPLACE_ORIGINAL_AFTER_EXPORT_WEBP =
