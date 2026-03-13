@@ -110,9 +110,7 @@ export async function processImages({
 }: ImageProcessorConfig): Promise<OptimizedFileResult[]> {
   const results: OptimizedFileResult[] = [];
   for (let imageFileName of imagesToCompress) {
-    const extension = imageFileName.substring(
-      imageFileName.lastIndexOf('.') + 1,
-    );
+    const extension = imageFileName.substring(imageFileName.lastIndexOf('.') + 1);
 
     if (extension === 'svg') {
       const svgResult = processSvg(imageFileName);
@@ -128,9 +126,7 @@ export async function processImages({
   return results;
 }
 
-export function getImageProcessorConfig(
-  allFiles: string[],
-): ImageProcessorConfig {
+export function getImageProcessorConfig(allFiles: string[]): ImageProcessorConfig {
   let svgCount = 0;
   let pngCount = 0;
   let jpgCount = 0;
@@ -147,10 +143,7 @@ export function getImageProcessorConfig(
     } else if (COMPRESS_PNG && fileName.endsWith('.png')) {
       imagesToCompress.push(fileName);
       pngCount++;
-    } else if (
-      COMPRESS_JPG &&
-      (fileName.endsWith('.jpg') || fileName.endsWith('.jpeg'))
-    ) {
+    } else if (COMPRESS_JPG && (fileName.endsWith('.jpg') || fileName.endsWith('.jpeg'))) {
       imagesToCompress.push(fileName);
       jpgCount++;
     } else if (COMPRESS_GIF && fileName.endsWith('.gif')) {
@@ -217,9 +210,7 @@ function processSvg(svgFileName: string): OptimizedFileResult | undefined {
   };
 }
 
-export async function processImage(
-  imageFileName: string,
-): Promise<OptimizedFileResult[]> {
+export async function processImage(imageFileName: string): Promise<OptimizedFileResult[]> {
   const results: OptimizedFileResult[] = [];
   const extension = imageFileName.substring(imageFileName.lastIndexOf('.') + 1);
   const fileData = readFileSync(imageFileName);

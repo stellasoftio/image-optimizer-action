@@ -3,6 +3,8 @@
   "version": "1.3.0",
   "private": true,
   "description": "A GitHub Action to optimize images",
+  "license": "GPL-3.0",
+  "author": "Chad Adams",
   "main": "./dist/index.js",
   "scripts": {
     "type-check": "tsc --noEmit",
@@ -14,8 +16,6 @@
     "test": "tsx src/test.ts",
     "changeset": "changeset"
   },
-  "author": "Chad Adams",
-  "license": "GPL-3.0",
   "dependencies": {
     "@actions/core": "^1.11.1",
     "@actions/github": "^6.0.1",

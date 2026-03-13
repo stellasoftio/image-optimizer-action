@@ -1,0 +1,4 @@
+{
+  "ignorePatterns": ["dist/**", ".changeset/**", "CHANGELOG.md"],
+  "singleQuote": true
+}

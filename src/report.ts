@@ -11,9 +11,7 @@ export interface ReportData {
   terminalReport: string;
 }
 
-export async function generateReport(
-  data: OptimizedFileResult[],
-): Promise<ReportData> {
+export async function generateReport(data: OptimizedFileResult[]): Promise<ReportData> {
   const sortedData = Array.from(data).sort((a, b) => {
     return a.fileName.localeCompare(b.fileName);
   });
