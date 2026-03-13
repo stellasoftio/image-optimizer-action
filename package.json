@@ -1,5 +1,5 @@
 {
-  "name": "image-optimizer-action-test",
+  "name": "image-optimizer-action",
   "version": "1.2.0",
   "description": "A GitHub Action to optimize images",
   "main": "./dist/index.js",
