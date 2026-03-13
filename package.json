@@ -1,5 +1,5 @@
 {
-  "name": "image-optimizer-action-test",
+  "name": "image-optimizer-action",
   "version": "1.2.0",
   "description": "A GitHub Action to optimize images",
   "main": "./dist/index.js",
@@ -9,7 +9,8 @@
     "build": "npm run type-check && esbuild src/index.ts --bundle --platform=node --outfile=dist/index.js --external:sharp",
     "lint": "oxlint",
     "format": "prettier --write .",
-    "test": "tsx src/test.ts"
+    "test": "tsx src/test.ts",
+    "changeset": "changeset"
   },
   "author": "Chad Adams",
   "license": "GPL-3.0",
@@ -22,6 +23,7 @@
     "table": "^6.9.0"
   },
   "devDependencies": {
+    "@lazy-release/changesets": "^0.7.0",
     "@types/node": "^22.16.3",
     "esbuild": "^0.25.0",
     "oxlint": "^0.18.1",
